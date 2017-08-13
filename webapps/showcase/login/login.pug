@@ -1,0 +1,59 @@
+.ui.hidden.divider 
+.ui.hidden.divider 
+.ui.hidden.divider 
+.ui.hidden.divider 
+.ui.hidden.divider 
+.ui.hidden.divider 
+.ui.hidden.divider 
+.ui.hidden.divider 
++showif('! login.loggedin')
+    .ui.four.column.stackable.center.aligned.grid 
+        .column 
+            form.ui.form 
+                .field
+                    .ui.left.icon.input 
+                        input.username(
+                            value="{{login.user}}" 
+                            placeholder="username")
+                        i.user.icon 
+                .field 
+                    .ui.left.icon.input
+                        input.password(
+                            value="{{login.password}}" 
+                            placeholder="password"
+                            type="password")
+                        i.lock.icon 
+                
+                login-button.fluid.green.login(
+                    transport-id="{{dcs.transportId}}"
+                    user="{{login.user}}" 
+                    password="{{login.password}}"
+                    context="{{login}}"
+                    on-success="success") Login                            
+
++showif('login.loggedin')
+    .ui.ten.column.stackable.center.aligned.grid 
+        .six.wide.column 
+            h1.ui.header
+                i.green.check.icon 
+                | Logged in 
+            .ui.two.fluid.buttons
+                
+                
+                login-button.red.left.icon(logout
+                    transport-id="{{dcs.transportId}}"
+                    context="{{login}}") #[i.sign.out.icon] Logout
+                
+                
+                redirect-button.right.labeled.icon.teal.redirect-button(
+                    href='#/{{login.openingScene}}' 
+                    redirect-delay="0"
+                    inform)
+                    i.toggle.right.icon
+                    +iff('login.openingScene') 
+                        | Opening scene
+                    +else 
+                        | Default scene
+                    +endif
+
+        

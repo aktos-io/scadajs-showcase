@@ -1,0 +1,23 @@
+.ui.fixed.inverted.main.menu
+    .ui.container 
+        a.launch.icon.item(onclick="$('.ui.sidebar').sidebar('toggle')")
+            i.content.icon 
+            
+        .right.menu
+            //-
+                .vertically.fitted.borderless.item         
+                    img.ui.tiny(src="aktos.io-brand-4.svg")
+
+            .item
+                +iff('login.loggedin')
+                    i.icon.user
+                    span {{login.user}}
+                +else     
+                    btn.labeled.icon.green(href='#/login') Sign in #[i.sign.in.icon]
+                +endif 
+            +if('login.loggedin')
+                .item
+                    login-button.red.circular.icon(logout
+                        transport-id="{{dcs.transportId}}"
+                        context="{{login}}") 
+                            i.sign.out.icon

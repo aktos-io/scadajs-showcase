@@ -1,0 +1,56 @@
+include ./menu/side-menu.pug
+
++partial('top-menu')
+    include ./menu/top-menu.pug
+    .ui.hidden.divider
+    .ui.hidden.divider
+
+
+router(curr="{{ currentPage }}")
+logger(curr="{{ currentPage }}")
+browser-storage(db="session" key="token" value="{{login.token}}")
+
+//- realtime layer 
+aktos-dcs(transport-id="{{dcs.transportId}}")
+
+//- login button for attempting to login with token on page load 
+login-button(
+    transport-id="{{dcs.transportId}}" 
+    context="{{login}}" 
+    token="{{login.token}}" 
+    hidden auto) ...         
+    
+//- ---------------------------------------------------            
+//- Scenes 
+//- ---------------------------------------------------            
+scene.pusher(name="authorization-test" curr="{{currentPage}}")    
+    +apply('top-menu')
+    .ui.attached.segment
+        .ui.container 
+            authorization
+        
+scene.pusher(name="login" curr="{{currentPage}}")
+    +apply('top-menu')
+    .ui.attached.segment
+        .ui.container 
+            login
+    
+scene.pusher(name="scada-components" curr="{{currentPage}}" default)
+    +apply('top-menu')
+    .ui.attached.segment
+        .ui.container
+            scada-components
+
+scene.pusher(name="erp-components" curr="{{currentPage}}")
+    +apply('top-menu')
+    .ui.attached.segment
+        .ui.container 
+            erp-components
+
+
+scene.pusher(name="example" curr="{{currentPage}}")
+    +apply('top-menu')
+    .ui.attached.segment
+        .ui.container 
+            example
+            
