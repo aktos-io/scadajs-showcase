@@ -4,13 +4,14 @@ This is a template project to get up and start running with [scada.js](https://g
 
 # Directory structure 
 
-Your webapps should go to `webapps/` directory in order to let scada.js find your webapps. Your other components, such as webservers, microservices etc. will stay in `this` directory.
+* Your webapps should go to `webapps/` directory in order to let scada.js find your webapps. 
+* Your other components, such as webservers, microservices etc. will stay in `this` directory.
 
 # Install
 
 1. Download the project template: 
 
-    git clone https://github.com/ceremcem/scadajs-template-project myproject
+       git clone https://github.com/ceremcem/scadajs-template-project myproject
 
 2. Follow the instructions on [scada.js/install](https://github.com/aktos-io/scada.js#install) section.
 
