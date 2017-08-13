@@ -80,7 +80,7 @@ Ractive.components['erp-components'] = Ractive.extend do
             'uploadReadFile': (ev, file, next) ->
                 ev.component.fire \state, \doing
                 console.log "Appending file: #{file.name}"
-                ractive.push 'fileRead.files', file
+                @push 'fileRead.files', file
                 /*
                 answer <- ev.component.fire \yesno, message: """
                     do you want to proceed?
@@ -92,13 +92,13 @@ Ractive.components['erp-components'] = Ractive.extend do
                 next!
 
             'fileReadClear': (ev) ->
-                ractive.set \fileRead.files, []
+                @set \fileRead.files, []
                 ev.component.fire \info, message: "cleared!"
 
             'importCsv': (ev, content) ->
                 ev.component.fire \state, \doing
                 console.log "content: ", content
-                ractive.set \csvContent, content
+                @set \csvContent, content
                 ev.component.fire \state, \done...
             'testFormalField': (ev, log-item, finish) ->
                 /*
@@ -106,12 +106,12 @@ Ractive.components['erp-components'] = Ractive.extend do
                 <- sleep 3000ms
                 ev.component.fire \state, \done...
                 */
-                formal-field = ractive.get \formalField
+                formal-field = @get \formalField
                 formal-field.value1 = log-item.curr.value1
                 formal-field.value2 = log-item.curr.value2
-                ractive.set \previous, log-item.prev
+                @set \previous, log-item.prev
                 formalField.changelog = ev.add-to-changelog log-item
-                ractive.set \formalField, formal-field
+                @set \formalField, formal-field
                 finish!
 
             'testFormalFieldShow':(ev, log) ->
@@ -145,16 +145,16 @@ Ractive.components['erp-components'] = Ractive.extend do
 
             /*
             delete-product: (i) ->
-                products = ractive.get \combobox.products
+                products = @get \combobox.products
                 products.splice (parse-int i), 1
-                ractive.set \combobox.products, products
+                @set \combobox.products, products
             */
 
             'deleteProducts': (event, i) ->
-                products = ractive.get \combobox.case2
+                products = @get \combobox.case2
                 index = parse-int i
                 products.splice index, 1
-                ractive.set \combobox.case2, products
+                @set \combobox.case2, products
                 debugger
     data: ->
         button:
