@@ -35,6 +35,6 @@ Following commands will start everything needed for development:
        
 3. Your webserver should [start on port 4001](./webserver/configuration.ls). Open your web browser and go to [localhost:4001](http://localhost:4001). 
 
-# Demo 
+# Live Demo 
 
 This project can be seen in action at https://aktos.io/showcase
