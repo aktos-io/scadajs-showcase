@@ -1,29 +1,37 @@
 anchor authentication
 .ui.segments
-    h3.ui.attached.block.header.red Authorized Area #[checkbox(checked="{{hackme}}") HACK ME :) {{hackme}}]
+    h3.ui.attached.block.header.red 
+        | Authorized Area 
+        checkbox(checked="{{hackme}}" class!="{{#if hackme}}red{{/if}}") 
+            +iff('hackme') 
+                | HACKED! >:D
+            +else 
+                | HACK ME :)
+            +endif 
+            
     .ui.attached.red.segment
         .ui.message 
             |effective permissions: can see: 
-            +iff("canSee('authorization.test1') || hackme")
+            +iff("canSee(login, 'authorization.test1') || hackme")
                 .ui.label.green yes 
             +else 
                 .ui.label.red no 
             +endif 
             | , can write: 
-            +iff("isDisabledFor('authorization.test1') && !hackme ")
-                .ui.label.red no 
-            +else 
+            +iff("canWrite(login, 'authorization.test1') || hackme ")
                 .ui.label.green yes 
+            +else 
+                .ui.label.red no  
             +endif 
                         
-        +if("canSee('authorization.test1') || hackme")
+        +if("canSee(login, 'authorization.test1') || hackme")
             .ui.input: input(
-                value="{{rtComponents.testAuthorization1.value}}"
-                disabled!="{{isDisabledFor('authorization.test1') && !hackme }}")
+                value="{{testValue}}"
+                disabled!="{{cannotWrite(login, 'authorization.test1') && !hackme }}")
             slider(
-                value="{{rtComponents.testAuthorization1.value}}"
-                disabled!="{{isDisabledFor('authorization.test1') && !hackme }}")
-            sync(value="{{rtComponents.testAuthorization1.value}}" 
+                value="{{testValue}}"
+                disabled!="{{cannotWrite(login, 'authorization.test1') && !hackme }}")
+            sync(value="{{testValue}}" 
                 topic="authorization.test1"
                 perms="{{authorization.test1.perms}}")            
 

@@ -14,23 +14,24 @@ Ractive.components['erp-components'] = Ractive.extend do
             'testAckButton2': (ev, value) ->
                 ev.component.fire \state, \doing
                 <- sleep 1000ms
-                action <- ev.component.fire \error, "handler 2 got message: #{value}"
+                console.log "value was: ", value
+                action <- ev.component.error "handler 2 got message: #{value}"
                 console.log "ack-button's error modal is closed."
 
             'testAckButton3': (ev, value) ->
-                action <- ev.component.fire \info, do
+                action <- ev.component.info do
                     title: "this is an example info"
                     message: value or "test info..."
                 console.log "ack-button action has been taken: #{action}"
 
             'testAckButton4': (ev) ->
-                action <- ev.component.fire \yesno, do
+                action <- ev.component.yesno do
                     title: "Step 2 of 2"
                     message: "Do you want to continue?"
                 console.log "ack-button action has been taken: #{action}"
 
             'textButtonTest': (ev, value) ->
-                ev.component.fire \info, do
+                ev.component.info do
                     title: "Text Button Test"
                     message: "value passed by input is: #{value}"
 
@@ -39,7 +40,7 @@ Ractive.components['erp-components'] = Ractive.extend do
                 ev.component.fire \state, \doing
                 if @get \checkbox.throw
                     <- sleep 1000ms
-                    <- ev.component.fire \error, {message: "my custom error"}
+                    <- ev.component.error {message: "my custom error"}
                     console.log "checkbox processed the error modal (modal is closed now)"
                 else
                     <- sleep 1000ms
@@ -81,19 +82,13 @@ Ractive.components['erp-components'] = Ractive.extend do
                 ev.component.fire \state, \doing
                 console.log "Appending file: #{file.name}"
                 @push 'fileRead.files', file
-                /*
-                answer <- ev.component.fire \yesno, message: """
-                    do you want to proceed?
-                """
-                ev.component.fire \state, \error, "cancelled!" if answer is no
-                */
                 ev.component.fire \state, \done
                 <- sleep 2000ms
                 next!
 
             'fileReadClear': (ev) ->
                 @set \fileRead.files, []
-                ev.component.fire \info, message: "cleared!"
+                ev.component.info message: "cleared!"
 
             'importCsv': (ev, content) ->
                 ev.component.fire \state, \doing
@@ -141,7 +136,7 @@ Ractive.components['erp-components'] = Ractive.extend do
                         </tbody>
                     </table>
                     """
-                ev.component.fire \info, message: html: string
+                ev.component.info message: html: string
 
             /*
             delete-product: (i) ->
