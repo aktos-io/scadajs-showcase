@@ -8,15 +8,13 @@ This is a template project to get up and start running with [scada.js](https://g
 
        git clone https://github.com/ceremcem/scadajs-template-project myproject
 
-2. Install global requirements: [scada.js/install](https://github.com/aktos-io/scada.js#install).
+2. [Follow the instructions](https://github.com/aktos-io/scada.js/blob/master/README.md#install-global-dependencies) to install global requirements.
 
-3. Install scada.js requirements: [scada.js/start your project](https://github.com/aktos-io/scada.js/blob/master/README.md#start-your-project) 
+3. [Follow the instructions](https://github.com/aktos-io/scada.js/blob/master/README.md#install-dependencies-per-project) to install scada.js project dependencies. 
     
 # Run 
 
-### aea-way 
-
-Following commands will start everything needed for development: 
+If you are on Linux, following commands will start everything needed for development: 
 
     ./uidev.service --background
     ./server.service 
