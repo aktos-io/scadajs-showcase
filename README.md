@@ -1,6 +1,6 @@
 # Description 
 
-This is a template project to get up and start running with [scada.js](https://github.com/aktos-io/scada.js). 
+This is the template project to get up and running with [scada.js](https://github.com/aktos-io/scada.js). 
 
 # Install
 
