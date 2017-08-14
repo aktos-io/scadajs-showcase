@@ -14,7 +14,7 @@ This project can be seen in action at https://aktos.io/showcase
 
 2. Download the project template, install project dependencies: 
 
-       git clone https://github.com/ceremcem/scadajs-template-project myproject
+       git clone https://github.com/aktos-io/scadajs-template myproject
        cd myproject 
        git submodule update --init --recursive
        cd scada.js
