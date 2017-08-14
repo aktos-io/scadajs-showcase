@@ -8,11 +8,13 @@ This project can be seen in action at https://aktos.io/showcase
 
 # Install
 
-1. Install global dependencies (if you didn't already): 
+1. Install [Node.js](https://nodejs.org/en/download/)
 
-       npm install -g gulp yarn livescript@1.4.0
+2. Install global dependencies (if you didn't already): 
 
-2. Download the project template, install project dependencies: 
+       # npm install -g gulp yarn livescript@1.4.0
+
+3. Download the project template, install project dependencies: 
 
        git clone https://github.com/aktos-io/scadajs-template myproject
        cd myproject 
