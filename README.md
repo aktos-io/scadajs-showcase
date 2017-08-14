@@ -4,13 +4,17 @@ This is a template project to get up and start running with [scada.js](https://g
 
 # Install
 
-1. Download the project template: 
+1. Install global dependencies (if you didn't already): 
+
+       npm install -g gulp yarn livescript@1.4.0
+
+2. Download the project template, install project dependencies: 
 
        git clone https://github.com/ceremcem/scadajs-template-project myproject
-
-2. [Follow the instructions](https://github.com/aktos-io/scada.js/blob/master/README.md#install-global-dependencies) to install global requirements.
-
-3. [Follow the instructions](https://github.com/aktos-io/scada.js/blob/master/README.md#install-dependencies-per-project) to install scada.js project dependencies. 
+       cd myproject 
+       git submodule update --init --recursive
+       cd scada.js
+       yarn  # or `npm install`
     
 # Run 
 
