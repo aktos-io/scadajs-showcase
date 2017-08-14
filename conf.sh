@@ -27,5 +27,4 @@ if [[ "$SCADA" == "" ]]; then
     exit 255
 fi
 
-# change working directory
 export NODE_PATH="${SCADA}/node_modules:${SCADA}/src/lib:$NODE_PATH"
