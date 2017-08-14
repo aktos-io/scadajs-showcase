@@ -20,6 +20,7 @@ This is a template project to get up and start running with [scada.js](https://g
 
 If you are on Linux, following commands will start everything needed for development: 
 
+    cd myproject
     ./uidev.service --background
     ./server.service 
 
