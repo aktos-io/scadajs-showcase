@@ -2,6 +2,10 @@
 
 This is the template project to get up and running with [scada.js](https://github.com/aktos-io/scada.js). 
 
+# Live Demo 
+
+This project can be seen in action at https://aktos.io/showcase
+
 # Install
 
 1. Install global dependencies (if you didn't already): 
@@ -24,7 +28,7 @@ If you are on Linux, following commands will start everything needed for develop
     ./uidev.service --background
     ./server.service 
 
-### Manual way 
+### The Manual Way 
 
 1. Start continuous build of webapp: 
  
@@ -38,6 +42,3 @@ If you are on Linux, following commands will start everything needed for develop
        
 3. Your webserver should [start on port 4001](./webserver/configuration.ls). Open your web browser and go to [localhost:4001](http://localhost:4001). 
 
-# Live Demo 
-
-This project can be seen in action at https://aktos.io/showcase
