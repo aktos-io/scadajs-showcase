@@ -48,10 +48,4 @@ If you are on Linux, following commands will start everything needed for develop
        
 3. Your webserver should [start on port 4001](./webserver/configuration.ls). Open your web browser and go to [localhost:4001](http://localhost:4001). 
 
-# Tested on
-
-* **Linux**
-    * Debian 8
-    * Raspbian (on Raspberry 2 and 3)
-    
 
