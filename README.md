@@ -1,27 +1,40 @@
 # Description 
 
-This is a template project to get up and start running with [scada.js](https://github.com/aktos-io/scada.js). 
+This is the template project to get up and running quickly with [scada.js](https://github.com/aktos-io/scada.js). 
+
+# Live Demo 
+
+This project can be seen in action at https://aktos.io/showcase
 
 # Install
 
-1. Download the project template: 
+1. Install [Node.js](https://nodejs.org/en/download/)
 
-       git clone https://github.com/ceremcem/scadajs-template-project myproject
+2. Install global dependencies (if you didn't already): 
 
-2. Install global requirements: [scada.js/install](https://github.com/aktos-io/scada.js#install).
+       # npm install -g gulp yarn livescript@1.4.0
 
-3. Install scada.js requirements: [scada.js/start your project](https://github.com/aktos-io/scada.js/blob/master/README.md#start-your-project) 
+3. Download the project template, install project dependencies: 
+
+       git clone https://github.com/aktos-io/scadajs-template myproject
+       cd myproject 
+       git submodule update --init --recursive
+       cd scada.js
+       yarn  # or `npm install`
     
 # Run 
 
-### aea-way 
+If you are on Linux, following commands will start everything needed for development: 
 
-Following commands will start everything needed for development: 
+1. On first terminal: 
 
-    ./uidev.service --background
-    ./server.service 
+       ./uidev.service
 
-### Manual way 
+2. On second terminal: 
+
+       ./server.service 
+
+### The Manual Way 
 
 1. Start continuous build of webapp: 
  
@@ -35,6 +48,4 @@ Following commands will start everything needed for development:
        
 3. Your webserver should [start on port 4001](./webserver/configuration.ls). Open your web browser and go to [localhost:4001](http://localhost:4001). 
 
-# Live Demo 
 
-This project can be seen in action at https://aktos.io/showcase

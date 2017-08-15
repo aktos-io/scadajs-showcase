@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# ---------------------------------------------------------------------------------
+# Find scada.js folder by searching upwards and add it into the NODE_PATH variable
+# ---------------------------------------------------------------------------------
+
 find_scada_root () {
     local name=""
     testing_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -27,5 +31,4 @@ if [[ "$SCADA" == "" ]]; then
     exit 255
 fi
 
-# change working directory
 export NODE_PATH="${SCADA}/node_modules:${SCADA}/src/lib:$NODE_PATH"
