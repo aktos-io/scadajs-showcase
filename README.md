@@ -26,9 +26,13 @@ This project can be seen in action at https://aktos.io/showcase
 
 If you are on Linux, following commands will start everything needed for development: 
 
-    cd myproject
-    ./uidev.service --background
-    ./server.service 
+1. On first terminal: 
+
+       ./uidev.service
+
+2. On second terminal: 
+
+       ./server.service 
 
 ### The Manual Way 
 
