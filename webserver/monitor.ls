@@ -1,5 +1,6 @@
 require! 'dcs': {Actor, TCPProxyClient}
 require! 'colors': {bg-yellow}
+require! './configuration': {dcs-port}
 
 class Monitor extends Actor
     (name='') ->
@@ -18,4 +19,4 @@ class Monitor extends Actor
 
 
 new Monitor \test
-new TCPProxyClient port: 5588 .login {user: "monitor", password: "test"}
+new TCPProxyClient port: dcs-port .login {user: "monitor", password: "test"}

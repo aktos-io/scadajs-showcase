@@ -13,6 +13,10 @@ users-db =
       roles: \authorization-test-writer
       opening-scene: 'authorization-test'
 
+    * _id: 'monitor'
+      passwd-hash: hash-passwd "test"
+      roles: \monitor-all
+
 
 permissions-db =
     * _id: \authorization-test-reader
@@ -20,6 +24,9 @@ permissions-db =
 
     * _id: \authorization-test-writer
       rw: \authorization.test1
+
+    * _id: \monitor-all
+      rw: \**
 
 class Database
     ->
