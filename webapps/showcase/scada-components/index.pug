@@ -5,3 +5,5 @@ h1.ui.horizontal.divider.header
 include ./previews/progress/progress.pug
 include ./previews/slider.pug
 include ./previews/drawing-area.pug
+
+sync(value="{{progress.one.curr}}" topic="public.slider")
