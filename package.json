@@ -1,0 +1,25 @@
+{
+  "name": "scadajs-template",
+  "version": "1.0.0",
+  "description": "This is the template project to get up and running quickly with [scada.js](https://github.com/aktos-io/scada.js).",
+  "main": "scada.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ceremcem/scadajs-template-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ceremcem/scadajs-template-project/issues"
+  },
+  "homepage": "https://github.com/ceremcem/scadajs-template-project#readme",
+  "dependencies": {
+    "omron-fins": "git://github.com/aktos-io/node-omron-fins.git"
+  }
+}
