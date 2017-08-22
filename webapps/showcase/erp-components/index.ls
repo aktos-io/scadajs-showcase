@@ -7,6 +7,7 @@ Ractive.components['erp-components'] = Ractive.extend do
         @on do
             'testAckButton1': (ev, value) ->
                 ev.component.fire \state, \doing
+                sleep 1500ms, ~> ev.component.heartbeat!
                 <~ sleep 3000ms
                 @set \button.sendValue, value
                 ev.component.fire \state, \done...
