@@ -43,12 +43,12 @@ If you are on Linux, following commands will start everything needed for develop
 
 2. Start webserver/dcsserver:
 
-       cd webserver
-       ./run-ls server.ls
+       cd servers
+       ./run-ls webserver.ls
 
-3. Your webserver should [start on port 4001](./webserver/configuration.ls). Open your web browser and go to [http://localhost:4001](http://localhost:4001). 
+3. Your webserver should [start on port 4001](./servers/configuration.ls). Open your web browser and go to [http://localhost:4001](http://localhost:4001). 
 
 4. [Optional] If you want to monitor all messaging traffic, run monitor:
 
-        cd webserver
+        cd servers
         ./run-ls monitor.ls
