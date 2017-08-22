@@ -6,4 +6,4 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 launch-service $(calc-session-name "$0")
 
 # run commands in tmux session
-run-in-tmux "cd webserver" './run-ls server.ls'
+run-in-tmux "cd servers" './run-ls webserver.ls'
