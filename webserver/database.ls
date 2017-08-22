@@ -17,6 +17,10 @@ users-db =
       passwd-hash: hash-passwd "test"
       roles: \monitor-all
 
+    * _id: \hacknbreak
+      passwd-hash: hash-passwd "test"
+      roles: \hardware
+
 
 permissions-db =
     * _id: \authorization-test-reader
@@ -27,6 +31,9 @@ permissions-db =
 
     * _id: \monitor-all
       rw: \**
+
+    * _id: \hardware
+      rw: \io.my1.**
 
 class Database
     ->

@@ -1,0 +1,4 @@
+#!/bin/bash 
+
+. ./conf.sh
+lsc $1
