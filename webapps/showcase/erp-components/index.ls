@@ -30,6 +30,20 @@ Ractive.components['erp-components'] = Ractive.extend do
                     message: "Do you want to continue?"
                 console.log "ack-button action has been taken: #{action}"
 
+            ackbuttonTimeout: (ev) ->
+                ev.component.fire \state, \doing
+                # this button should throw a timeout error
+
+            ackbuttonTimeoutHeartbeat: (ev) ->
+                ev.component.fire \state, \doing
+                # this button should throw a timeout error
+                i = 0
+                <~ :lo(op) ~>
+                    <~ sleep 1000ms
+                    ev.component.heartbeat!
+                    return op! if ++i >= 3
+                    lo(op)
+
             'textButtonTest': (ev, value) ->
                 ev.component.info do
                     title: "Text Button Test"
