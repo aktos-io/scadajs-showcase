@@ -1,0 +1,12 @@
+p fanı açıp kapatan düğme birazdan buraya gelecek
+ack-button(
+    on-buttonclick="toggleFan" 
+    value="{{fanState}}"
+    class!="{{#if fanState}}red{{else}}green{{/if}}") 
+    +iff('fanState')
+        | Fanı aç
+    +else
+        | Fanı kapat
+    +endif
+    
+p fanın durumunu: {{#if fanState}}çalışır duruma{{else}}durur duruma{{/if}} getir
