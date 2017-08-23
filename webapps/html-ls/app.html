@@ -1,10 +1,13 @@
-<p> Hello world!</p>
+<h1 class="ui centered header"> Hello {{name}}!</h1>
 
-<p> You can use Ractive here. Type your name <input value="{{ name }}" placeholder="here" /> </p>
+<div class="ui segment">
+    You can use Ractive here. Type your name <div class="ui input" >
+        <input value="{{ name }}" placeholder="here" /></div>
+</div>
 
-<h3> Hello {{ name }}! </h3>
+<p>
+    <i class="large icon dashboard" />
+    Any built-in components (look at scada.js/components) will also work as usual
+</p>
 
-<panel>
-    <p> <icon-dashboard /> Any built-in components (look at /src/client/components) will also work as usual </p>
-    <example-component></example-component>
-</panel>
+<slider inline value="{{x}}" /> <progress type="circle" value="{{x}}"></progress>

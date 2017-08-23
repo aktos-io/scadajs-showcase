@@ -1,4 +1,8 @@
-extends ../../../../src/client/templates/template.pug
+extends ../../scada.js/templates/template.pug
 
 block title
-    title #{app}
+    title pug + ls example
+
+block app 
+    script(src="app.js")
+    

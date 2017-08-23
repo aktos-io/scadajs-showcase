@@ -1,15 +1,12 @@
-h1 Livescript + Pug example
+h2.ui.centered.header Hello {{name}}!
 
-p Hello world!
+.ui.segment
+    | You can use Ractive here. Type your name 
+    .ui.input: input(value="{{name}}" placeholder="here")
 
-p You can use Ractive here. Type your name #[input(value="{{ name }}" placeholder="here")]
+p
+    i.large.icon.dashboard     
+    | Any built-in components (look at scada.js/components) will also work as usual
 
-h3 Hello {{ name }}!
-
-
-panel
-    p.
-        #[icon-dashboard] Any built-in components (look at /src/client/components)
-        will also work as usual if you #[code require! components]
-
-example-component
+slider(inline value="{{x}}")
+progress(type="circle" value="{{x}}")

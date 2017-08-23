@@ -1,7 +1,8 @@
 require! components
 
-ractive = new Ractive do
-    el: '#main-output'
+new Ractive do
+    el: \body
     template: RACTIVE_PREPARSE('app.pug')
     data:
-        name: "guest"
+        name: "world"
+        x: 35

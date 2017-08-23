@@ -1,2 +1,3 @@
-Compile with `gulp --app template --webapp pug-ls`
-Open {{scada_path}}/template/pug-ls with your browser. 
+Compile with `gulp --webapp pug-ls`
+
+Open `scada.js/build/pug-ls/index.html` with your browser.

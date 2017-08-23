@@ -1,2 +1,3 @@
-Compile with `gulp --app template --webapp html-ls`
-Open {{scada_path}}/template/html-ls with your browser.
+Compile with `gulp --webapp html-ls`
+
+Open `scada.js/build/html-ls/index.html` with your browser.
