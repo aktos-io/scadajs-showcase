@@ -1,7 +1,7 @@
 require! 'dcs': {Actor, TCPProxyClient}
 require! 'aea': {sleep, pack}
 require! './omron-fins-client': {OmronFinsClient}
-require! '../webserver/configuration': {dcs-port}
+require! '../servers/configuration': {dcs-port}
 
 class Simulator extends Actor
     ->
