@@ -5,10 +5,20 @@ anchor progress
     .ui.attached.segment
         ui-progress.top.attached.orange(value="{{progress.one.curr}}" max="{{progress.one.max}}")
         btn.basic.teal.label.icon(href=srcAddr newtab) #[i.code.icon] View on Github #[i.github.icon]
-
-
         assign(input="{{true}}" output="{{hidemeprogrgess}}")
         checkbox(checked="{{hidemeprogrgess}}") hide/show 
+
+        .ui.message.orange
+            h3 Test Realtime Message Propogation
+            ol
+                li Open this page on multiple devices.
+                li Change slider input.
+                li See the changes are propogated in realtime.
+
+        .ui.message
+            h3 See Also 
+            ul 
+                li #[a(href="#/authorization-test") Authorization Test] page for authorization options.
             
         +if('hidemeprogrgess')
             r-table(class="ui very basic collapsing celled table")

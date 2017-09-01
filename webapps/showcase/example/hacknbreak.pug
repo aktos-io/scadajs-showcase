@@ -1,12 +1,10 @@
-p fanı açıp kapatan düğme birazdan buraya gelecek
+h3 Toggle PLC output
 ack-button(
     on-buttonclick="toggleFan" 
     value="{{fanState}}"
     class!="{{#if fanState}}red{{else}}green{{/if}}") 
     +iff('fanState')
-        | Fanı aç
+        | Run
     +else
-        | Fanı kapat
+        | Stop
     +endif
-    
-p fanın durumunu: {{#if fanState}}çalışır duruma{{else}}durur duruma{{/if}} getir
