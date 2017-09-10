@@ -1,6 +1,6 @@
 # Description
 
-This is the showcase project to demonstrate all components provided by [ScadaJS](https://github.com/aktos-io/scada.js)., authentication and authorization mechanism, realtime capabilities and some component customizations. 
+This is the showcase project to demonstrate all components provided by [ScadaJS](https://github.com/aktos-io/scada.js), authentication and authorization mechanism, realtime capabilities and some component customizations. 
 
 # Live Demo
 
