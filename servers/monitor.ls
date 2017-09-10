@@ -1,6 +1,6 @@
 require! 'dcs': {Actor, TCPProxyClient}
 require! 'colors': {bg-yellow}
-require! './configuration': {dcs-port}
+require! '../config': {dcs-port}
 
 class Monitor extends Actor
     (name='') ->
