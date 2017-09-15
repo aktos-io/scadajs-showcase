@@ -5,6 +5,12 @@ Ractive.components['erp-components'] = Ractive.extend do
     isolated: no
     onrender: ->
         @on do
+            complete: ->
+                do # lazy loading of combobox
+                    <~ sleep 5000ms
+                    @set \combobox.lazy.data, @get \combobox.list1
+
+
             'testAckButton1': (ev, value) ->
                 ev.component.fire \state, \doing
                 sleep 1500ms, ~> ev.component.heartbeat!
@@ -183,6 +189,10 @@ Ractive.components['erp-components'] = Ractive.extend do
                 """
         input-field: value: null
         combobox:
+            lazy:
+                selected: 3
+                debug: no 
+
             show: yes
             selected:
                 * id: \aaa
