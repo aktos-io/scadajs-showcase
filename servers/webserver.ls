@@ -1,6 +1,7 @@
 require! <[ fs path express ]>
 require! '../config': {webserver-port, dcs-port}
-require! 'dcs': {TCPProxyServer, SocketIOServer}
+require! 'dcs': {TCPProxyServer}
+require! 'dcs/browser': {SocketIOServer}
 require! './auth-db': {db}
 
 # -----------------------------------------------------------------------------
