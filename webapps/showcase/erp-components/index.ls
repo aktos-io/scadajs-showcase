@@ -5,6 +5,12 @@ Ractive.components['erp-components'] = Ractive.extend do
     isolated: no
     onrender: ->
         @on do
+            complete: ->
+                do # lazy loading of combobox
+                    <~ sleep 5000ms
+                    @set \combobox.lazy.data, @get \combobox.list1
+
+
             'testAckButton1': (ev, value) ->
                 ev.component.fire \state, \doing
                 sleep 1500ms, ~> ev.component.heartbeat!
@@ -50,16 +56,16 @@ Ractive.components['erp-components'] = Ractive.extend do
                     title: "Text Button Test"
                     message: "value passed by input is: #{value}"
 
-            'checkboxchanged': (ev, curr-state, intended-state, value) ->
-                console.log "checkbox event fired, curr: #{curr-state}"
-                ev.component.fire \state, \doing
-                if @get \checkbox.throw
-                    <- sleep 1000ms
-                    <- ev.component.error {message: "my custom error"}
-                    console.log "checkbox processed the error modal (modal is closed now)"
-                else
-                    <- sleep 1000ms
-                    ev.component.fire \state, intended-state
+            'checkboxTest': (ctx, next-state, callback) ->
+                <~ sleep 1000ms
+                callback null
+
+
+            'checkboxTestErr': (ctx, next-state, callback) ->
+                <~ sleep 1000ms
+                callback do
+                    title: "My checkbox error"
+                    message: "We can not set the checkbox to #{if next-state => "CHECKED" else "UNCHECKED"} state"
 
             'myPrint': (event, html, value, callback) ->
                 callback err=null, body: """
@@ -183,6 +189,10 @@ Ractive.components['erp-components'] = Ractive.extend do
                 """
         input-field: value: null
         combobox:
+            lazy:
+                selected: 3
+                debug: no 
+
             show: yes
             selected:
                 * id: \aaa

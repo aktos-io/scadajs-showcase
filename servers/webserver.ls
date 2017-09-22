@@ -1,8 +1,11 @@
+require! <[ fs path express ]>
+require! '../config': {webserver-port, dcs-port}
+require! 'dcs': {TCPProxyServer, SocketIOServer}
+require! './auth-db': {db}
+
 # -----------------------------------------------------------------------------
 # Webserver
 # -----------------------------------------------------------------------------
-require! <[ fs path express ]>
-require! './configuration': {webserver-port}
 
 pub-dir = "#{__dirname}/../scada.js/build/"
 app = express!
@@ -29,9 +32,6 @@ process.on 'SIGINT', ->
 # -----------------------------------------------------------------------------
 # DCS
 # -----------------------------------------------------------------------------
-require! 'dcs': {TCPProxyServer, SocketIOServer}
-require! './database': {db}
-require! './configuration': {dcs-port}
 
 # create socket.io server
 new SocketIOServer http, do

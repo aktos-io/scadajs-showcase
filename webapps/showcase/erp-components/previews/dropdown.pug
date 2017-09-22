@@ -41,6 +41,7 @@ anchor dropdown
                     +apply('dropdown1')
                     p selected: {{combobox.boundSelected}}
 
+    anchor dropdown-inline-example
     .ui.segment
         .ui.mini.header Inline Dropdown #[a(href="#dropdown-inline-example") #[icon.settings]]
         p.
@@ -49,5 +50,63 @@ anchor dropdown
 
     h3.ui.attached.block.header multiselect dropdown 
     .ui.attached.segment
-        dropdown(data="{{ combobox.list3 }}" selected="{{ combobox.boundSelected3 }}" placeholder="my placeholder" multiple)
-        p selected: {{ combobox.boundSelected3 }}
+        .ui.form 
+            .fields
+                .field 
+                    label Selected items:
+                    .ui.message.green 
+                        pre {{ JSON.stringify(combobox.boundSelected3) }}
+
+            .fields
+                .field 
+                    label Dropdown 1
+                    dropdown(
+                        data="{{ combobox.list3 }}" 
+                        selected-key="{{ combobox.boundSelected3 }}" 
+                        placeholder="my placeholder" 
+                        multiple)
+    
+                .field 
+                    label Dropdown 2
+                    dropdown(
+                        data="{{ combobox.list3 }}" 
+                        selected-key="{{ combobox.boundSelected3 }}" 
+                        placeholder="my placeholder" 
+                        multiple)
+
+    anchor dropdown-lazy-loading
+    h3.ui.attached.block.header lazy loading dropdown data #[a(href="#dropdown-lazy-loading") #[i.linkify.icon]]
+    .ui.attached.segment
+        p Data will be set in 5 seconds after rendering.
+        .ui.form 
+            .fields
+                .field 
+                    label Dropdown for selection (test equipment)
+                    dropdown(
+                        data="{{ combobox.list1 }}" 
+                        key="_id" 
+                        selected="{{ combobox.lazy.selected }}")
+
+                .field
+                    label Pre-set selected: 
+                    .ui.orange.tag.label {{combobox.lazy.selected}}
+                
+                .field
+                    label Lazy Dropdown 
+                    checkbox(checked="{{combobox.lazy.debug}}") Debug
+                    dropdown(
+                        data="{{ combobox.lazy.data }}" 
+                        key="_id" 
+                        selected="{{ combobox.lazy.selected }}" 
+                        placeholder="my placeholder"
+                        debug="{{combobox.lazy.debug}}")
+                        
+                     
+                .field
+                    label Lazy Dropdown Bound Copy 
+                    dropdown(
+                        data="{{ combobox.lazy.data }}" 
+                        key="_id" 
+                        selected="{{ combobox.lazy.selected }}" 
+                        placeholder="my placeholder")
+                     

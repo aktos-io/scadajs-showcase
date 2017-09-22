@@ -1,10 +1,10 @@
 # Description
 
-This is the template project to easily get up and running with [scada.js](https://github.com/aktos-io/scada.js).
+This is the showcase project to demonstrate all components provided by [ScadaJS](https://github.com/aktos-io/scada.js), authentication and authorization mechanism, realtime capabilities and some component customizations. 
 
 # Live Demo
 
-This project can be seen in action at https://aktos.io/showcase
+See in action at https://aktos.io/showcase
 
 # Install
 

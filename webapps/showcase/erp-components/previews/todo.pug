@@ -6,7 +6,7 @@
                 .content 
                     a.header {{ unixToReadable(.timestamp) }}
                     .description.
-                        "{{ .action }}" action taken with id {{ .targetId }} 
+                        "{{ .action }}" for: {{ .targetId }} 
                         on {{ unixToReadable(.timestamp) }}
 
 
@@ -34,7 +34,8 @@ anchor todo
 
                 .column 
                     h3.ui.block.header Logs for todo1
-                    | {{>logformat {todoLog: todos.log1}}}
+                    +apply('logformat {todoLog: todos.log1}')
+
     
     h3.ui.attached.block.header Independent Instances 
     .ui.attached.segment
@@ -51,7 +52,7 @@ anchor todo
                         )
                 .column
                     h3.ui.block.header Logs for todo1 
-                    | {{>logformat {todoLog: todos.log1}}}
+                    +apply('logformat {todoLog: todos.log1}')
 
             .row
                 .column 
@@ -65,5 +66,5 @@ anchor todo
                         )
                 .column
                     h3.ui.block.header Logs for todo2
-                    | {{>logformat {todoLog: todos.log2}}}
+                    +apply('logformat {todoLog: todos.log2}')
                     
