@@ -46,7 +46,7 @@ If you are on Linux, following commands will start everything needed for develop
        cd servers
        ./run-ls webserver.ls
 
-3. Your webserver should [start on port 4001](./servers/configuration.ls). Open your web browser and go to [http://localhost:4001](http://localhost:4001).
+3. Your webserver should [start on port 4004](./config.ls). Open your web browser and go to [http://localhost:4004](http://localhost:4004).
 
 4. *Optional:* To monitor all traffic, run `monitor.ls`:
 
